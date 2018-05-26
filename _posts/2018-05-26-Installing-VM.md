@@ -30,10 +30,20 @@ To support Cut&Paste and shared folders with the Windows host:
 sudo apt install build-essential checkinstall open-vm-tools-desktop
 ```
 
+Always-enable shares don't seem to work anymore. To make the shares visible, I found this:
+```
+sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
+```
+Alternatively, it might be possible to add this to */etc/fstab*':
+```
+"vmhgfs-fuse /mnt/hgfs fuse defaults,allow_other 0 0"
+```
+
+
 **In VMWare Player**:
 - set time synchronization with host. Maybe better alternative is install ntpd?
-- enable a shared folder with windows.  You may need to add this in /etc/fstab: ```"vmhgfs-fuse /mnt/hgfs fuse defaults,allow_other 0 0"```
-- sound is a problem on my system (Realtec drivers). This seems to solve it sometimes: add/change in the VMX file
+- enable a shared folder with windows.  Permanent shares may need to be disabled, then reenabled or use fstab setting.
+- sound is a problem on my system (Realtec drivers). By default, VMWare assumes Soundblaster. This seems to solve it sometimes: add/change in the VMX file
 ```
 sound.present = "TRUE"
 sound.virtualdev = "hdaudio"
