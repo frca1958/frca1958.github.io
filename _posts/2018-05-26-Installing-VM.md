@@ -5,13 +5,13 @@ title: "Ubuntu 18.04 install on VMWare"
 
 ## Basic installation steps
 
-#### Install from the mini.iso
+### Install from the mini.iso
 My language is English, the timezone is Brussels/Europe, the keyboard is En/Us euro on 5
 
 - task Basic Ubuntu Server
 - task OpenSSH
 
-#### Add GUI
+### Add GUI
 
 I prefer a minimal GUI which I start up from the console. Problem is that the Ubuntu Desktops are either bloated (any desktop) or incomplete (Lubuntu Core has missing icons, problems with fonts, ...). What works for me is this:
 
@@ -22,7 +22,7 @@ sudo systemctl set-default multi-user.target
 startx
 ```
 
-#### VMWare related settings
+### VMWare related settings
 
 To support Cut&Paste and shared folders with the Windows host:
 
@@ -50,28 +50,37 @@ sound.virtualdev = "hdaudio"
 sound.fileName = "-1"
 sound.autodetect = "TRUE"
 ```
-#### Some other tools
+### Some other tools
 
 For cleaning and navigating:
 ```
 sudo apt install mc
 sudo apt install bleachbit
+sudo apt install geany 
 ```
 
-#### Installing the ssh keys
+For https repos
+```
+sudo apt install apt-transport-https
+
+```
+
+
+
+### Installing the ssh keys
 
 I copied some keys and configurations from another vm using mc (sftp facility).
 Same for git configuration and some aliases.
 
 
-#### Some configuation changes
+### Some configuation changes
 
 The system default PATH is set in /etc/environment. I remove the games stuff from it.
 F10 in LxTerminal interferes with mc, so turn it off.
 I use skin=darkfar in ~/.config/mc/ini to improve colors in console.
 
 
-#### Some strange problems and some solutions
+### Some strange problems and some solutions
 
 :+1: If terminal fonts in the GUI become suddenly badly spaced, a solution seems to be to install ubuntu fonts.
 ```
