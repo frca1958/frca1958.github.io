@@ -50,6 +50,17 @@ sound.virtualdev = "hdaudio"
 sound.fileName = "-1"
 sound.autodetect = "TRUE"
 ```
+
+## Grub changes
+I like to see what happens during boot, so I made some changes:
+```
+#in file /etc/default/grub -- change following lines
+GRUB_HIDDEN_TIMEOUT=1
+GRUB_GFXMODE=1024x768
+GRUB_CMDLINE_LINUX_DEFAULT=""
+```
+
+
 ### Some other tools
 
 For cleaning and navigating:
