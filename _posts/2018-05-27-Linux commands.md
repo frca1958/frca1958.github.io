@@ -33,3 +33,30 @@ sudo apt-get install moka-icon-theme
 ```
 
 
+# About logging
+
+#### sudo
+Logs are by default available in /var/log/auth.log.
+An easy way to extract all commands is this:
+```
+sudo grep COMMAND /var/log/auth.log | sed -n -e 's/^.*COMMAND=//p'
+# -n: no printing
+# p suffix: print result
+```
+
+#### user history
+
+When using multiple terminals, user history is not correct. 
+One way to solve this is to force a history append after every command by adding this in .bashrc
+```
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+```
+Alternative is to create a second log.
+```
+[[ -d ~/.logs ]] || mkdir ~/.logs
+PROMPT_COMMAND='echo -e "$(date "+%H:%M:%S")\t$(tty)\t$(pwd)\t$(history 1)" >> ~/.logs/bash-$(date +%Y-%m-%d).log;'
+```
+
+[Advanced use](https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps)
+
