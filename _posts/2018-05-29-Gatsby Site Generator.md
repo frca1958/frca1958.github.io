@@ -73,6 +73,9 @@ gatsby develop -H 0.0.0.0
 
 ### Using surge to make the site public
 
+Surge.sh is a free site for static websites.
+
+
 ```sh
 npm install -g surge
 gatsby build
@@ -88,6 +91,17 @@ It is possible to build for a specific domain.
 - Use ```surge public gatsby.casier.nl```
 
 *Note: these free sites do not support https! Choose github for this.*
+
+- To teardown a site, do this  
+  ```surge teardown gatsby.casier.nl```
+
+*Note: https is supported for surge.sh subdomains. Execute the last 2 steps with casier.surg.sh for instance.
+- Create a file ./static/CNAME containing ```fc.surge.sh```
+- Use ```surge public https://fc.surge.sh```
+
+
+
+
 
 ### Various
 
