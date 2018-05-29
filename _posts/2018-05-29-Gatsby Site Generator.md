@@ -38,25 +38,27 @@ Now it is possible to reach the server at ip:8000.
 
 ### Add Git version control
 
-#### setup local git
+#### setup git
 
+First create an empty repo on bitbucket (or other remote), and check its clone command to get the git url.
+Add public ssh keys if necessary. 
+
+Provide the key to ssh-agent if needed.
 ```sh
-$ git init
-$ git add .
-$ git status
-$ git commit -m 'after gatsby new'
+ssh-add-fc
+#or
+ssh-add <path-to-pem>
 ```
 
-#### setup at bitbucket or other
-
-First create an empty repo on bitbucket, and check its clone command to get the git url.
-Add public ssh keys if necessary. Also provide the key to ssh-agent (```ssh-add-fc``` or ```ssh-add <path-to-pem>```.
-Now attach the local folder to the git repo. Use force if needed.
+Now clone the repo.
 
 ```sh
-$ git remote add origin git@bitbucket.org:frca1958/gatsby-site.git
-$ git pull origin master
-$ git push --force origin master
+git clone git@bitbucket.org:frca1958/gatsby-site.git
+git status
+#copy whatever you want, then
+git add .
+git commit -m "first commit"
+git push
 ```
 
 ## Tutorial Notes - [see here](https://www.gatsbyjs.org/tutorial/)
