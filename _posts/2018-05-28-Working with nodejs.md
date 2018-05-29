@@ -16,6 +16,7 @@ nvm install node
 nvm ls
 nvm use node
 nvm use lts/carbon
+nvm alias default node 
 ```
 
 
