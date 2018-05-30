@@ -12,22 +12,29 @@ For ruby, I have not really been happy with the shell modifying tools, but I did
 ## Installation of rvm
 
 [RVM can be found here](https://github.com/rvm) along with tools such as an ansible playbook. 
-Intallation for ubuntu goes as follows:
+However there are always problems with this , so I install according to the official guide:
+
 ```shell
-sudo apt-get install rvm
-usermod -a -G rvm $USER
-#following is needed! otherwise `rvm use xx` fails
-sudo apt update
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | rvm_ignore_dotfiles=yes bash -s stable
 ```
 
-It is easiest to reboot/log-out the machine now, to ensure that /etc/profile.d/rvm.sh is sourced.
+Now some changes are needed in the dotfiles. Since I start ubuntu in single user, and then start x, settings should be set in .profile only. So these instructions must be added to .profile:
+```
+#add at end of .profile
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+```
+
+Now logout complete (out of gui, out of console) and re-login. Check with ```rvm list known```
+
 
 ## Installation of ruby environment
 
 ```
 rvm install ruby
+rvm list
 rvm alias create default ruby-2.4.1
-#the next command fails in gui, and requires 'bash --login' first. Alternatively, quit GUI and do the cmd in console, then startx again 
 rvm use default
 ```
 
