@@ -3,6 +3,7 @@ To setup a website using github-pages, and to test it locally.
 
 ## Reference Docs
 - [Setup github pages locally](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+- [Setup github pages in master/docs folder](https://blog.github.com/2016-08-17-simpler-github-pages-publishing/)
 - [Learn about Ruby Gems](https://guides.rubygems.org/)
 - [Learn about bundler](https://bundler.io/)
 
@@ -15,7 +16,7 @@ To setup a website using github-pages, and to test it locally.
 # Use github UI to create git repo 'site-jekyll'
 git clone <site-url>
 cd <site>
-git checkout -b gh-pages
+#not-needed, use docs -- git checkout -b gh-pages
 # create Gemfile which installs jekyll
 gem install bundler
 bundle install
@@ -26,12 +27,23 @@ git add Gemfile Gemfile.lock
  - Try ```github-pages --help```
  - Update github pages with ``` gem update github-pages```
 
-### Creation of a github jekyll site:
+### Create and test the github jekyll site:
 ```sh
-bundle exec jekyll _3.3.0_ new site_jekyll_test
-#you must be in the site-jekyll repo in order to execute this! Even using ```jekyll _3.3.0_ ...``` wont work.
-cd site_jekyll_test
+bundle exec jekyll _3.3.0_ docs
+cd docs
+# In docs, edit the Gemfile to use github-pages instead of jekyll. Change title and description if you like. 
+bundle exec jekyll serve -H 0.0.0.0
 ```
+
+When happy, commit and push to publish 
+
+```sh
+git status
+git add .
+git commit -am "publish as it is now"
+git push
+```
+
 
 
 
