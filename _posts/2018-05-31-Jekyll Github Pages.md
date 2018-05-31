@@ -9,6 +9,8 @@ To setup a website using github-pages, and to test it locally.
 
 ## Traces and Notes
 
+### Installing github-pages (specific version of jekyll for github)
+
 ```sh
 # Use github UI to create git repo 'site-jekyll'
 git clone <site-url>
@@ -20,17 +22,20 @@ bundle install
 git add Gemfile Gemfile.lock
 ```
 
-Creation of the jekyll site:
+#### About github-pages
+ - Try ```github-pages --help```
+ - Update github pages with ``` gem update github-pages```
+
+### Creation of a github jekyll site:
 ```sh
 bundle exec jekyll _3.3.0_ new site_jekyll_test
 #you must be in the site-jekyll repo in order to execute this! Even using ```jekyll _3.3.0_ ...``` wont work.
 cd site_jekyll_test
 ```
 
-  
 
 
-**Notes**
+### **Notes**
 - bundle install failed:  
   correction: do ```sudo apt install zlig1g-dev```
 - short note about gem and bundle:
