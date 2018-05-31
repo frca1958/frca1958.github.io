@@ -20,12 +20,12 @@ bundle install
 git add Gemfile Gemfile.lock
 ```
 
-The manual is not very clear about the location of jekyll sites: are they beneath <site>? are they aside <site>?
-I guess the latter since I would need git within git otherrwise. So use github UI to create site-jekyll-test
+Creation of the jekyll site:
 ```sh
-git clone site-jekyll-test
-cd site-jekyll-test
-git checkout -b gh-pages
+bundle exec jekyll _3.3.0_ new site_jekyll_test
+#you must be in the site-jekyll repo in order to execute this! Even using ```jekyll _3.3.0_ ...``` wont work.
+cd site_jekyll_test
+```
 
   
 
@@ -37,6 +37,4 @@ git checkout -b gh-pages
   - bundle maintains specific dependencies for the specific project in file Gemfile.lock;
   - gem specifies dependencies more loosely, and provides an executable for many projects.
   - if you want to create an app, then you want to commit Gemfile.lock; otherwise not.
-- The manual is not very clear about the location of jekyll sites: are they beneath <site>? are they aside <site>?
-  I opted for the latter since I would need git within git otherrwise 
-  
+
