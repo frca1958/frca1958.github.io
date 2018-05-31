@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Linux Commands"
+---
+
 ## About apt
 
 - apt policy *pkg*

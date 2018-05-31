@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Working with Ruby"
+---
+
 ## Intro
 
 I think that programming environments should never be installed as root, unless there is no alternative.

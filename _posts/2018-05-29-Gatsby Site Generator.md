@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Gatsby site Generator"
+---
+
+
 ## Installation and basic startup
 
 ### References

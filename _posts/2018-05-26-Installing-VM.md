@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ubuntu 18.04 install on VMWare"
+title: "Installing VM"
 ---
 
 ## Basic installation steps

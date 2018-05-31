@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Jekyll Github pages"
+---
+
 ## Goal
 To setup a website using github-pages, and to test it locally.
 

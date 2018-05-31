@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Working with nodejs"
+---
+
 ## Installing NVM
 
 NVM has the same role for nodejs as rvm for ruby: managing different versions of the nodejs ecosystem.

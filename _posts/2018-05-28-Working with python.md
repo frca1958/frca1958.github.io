@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Working with Python"
+---
+
+
 ## Installation of python3
 
 Python3 is now installed by default on non-minimal installations.
