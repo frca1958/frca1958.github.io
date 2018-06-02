@@ -24,7 +24,7 @@ It is possible to see the loaded icons (```sudo apt install gtk-3-examples``` th
 
 Maybe I should install ```sudo apt install gnome-icon-theme-symbolic```. I tried it, but nothing seems to happen.
 
-Maybe I can find a better icon theme? I opened an applicationwith gtk+ icon theme warnings, and with that on screen I selected other icon themes.
+Maybe I can find a better icon theme? I opened an application with gtk+ icon theme warnings, and with that on screen I selected other icon themes.
 This gives some success:
 - Theme Humanity-xx is OK
 - Theme Ubuntu-Mono-xx is OK
