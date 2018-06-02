@@ -34,6 +34,10 @@ The file manager PCManFM (Places->Applications) provides some basic configuratio
 
 ### Snaps
 
+
+Login with the ubuntu-one account if needed (```snap login```). As a result, snap commands can be executed without need of sudo.
+
+
 **Firefox**
 Since I did not install any browser, the default x-www-browser alternative does not exist.
 I installed Firefox via snap. To make it known to LXDE, I created the missing alternative file:
