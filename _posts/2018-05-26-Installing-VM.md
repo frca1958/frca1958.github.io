@@ -43,13 +43,20 @@ Alternatively, it might be possible to add this to */etc/fstab*':
 **In VMWare Player**:
 - set time synchronization with host. Maybe better alternative is install ntpd?
 - enable a shared folder with windows.  Permanent shares may need to be disabled, then reenabled or use fstab setting.
-- sound is a problem on my system (Realtec drivers). By default, VMWare assumes Soundblaster. This seems to solve it sometimes: add/change in the VMX file
+- sound is a problem on my system (Realtec drivers). By default, VMWare assumes Soundblaster. This seems to solve it: 
+  - remove the sound card in Player Settings and shutdown
+  - edit VMX file, so that the sound settings are as shown.
 ```
-sound.present = "TRUE"
-sound.virtualdev = "hdaudio"
-sound.fileName = "-1"
-sound.autodetect = "TRUE"
+    sound.present = "TRUE"
+    sound.virtualdev = "hdaudio"
+    sound.fileName = "-1"
+    sound.autodetect = "TRUE"
 ```
+  - start the VM, install a sound mixer  
+```
+    sudo apt install pavucontrol
+```
+  - Ensure that output-devices is line-out(plugged in) and sound is not muted, HD audio controller configured 5.1+stereo.
 
 ## Grub changes
 I like to see what happens during boot, so I made some changes:
