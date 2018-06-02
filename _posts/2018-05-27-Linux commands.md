@@ -3,13 +3,10 @@ layout: post
 title: "Linux Commands"
 ---
 
-## About apt
-
-- apt policy *pkg*
-
-  This shows the installed version of *pkg*
-  
-- test
+# Refs
+- [About snaps](https://docs.snapcraft.io/core/usage)
+- [About apt](https://itsfoss.com/apt-command-guide/)
+- [About apt](https://www.computerhope.com/unix/apt.htm)
 
 
 
