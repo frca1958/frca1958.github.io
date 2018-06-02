@@ -70,18 +70,21 @@ GRUB_CMDLINE_LINUX_DEFAULT=""
 
 ### Some other tools
 
-For cleaning and navigating:
-```
-sudo apt install mc
-sudo apt install bleachbit
-sudo apt install geany 
-```
-
 For https repos
 ```
 sudo apt install apt-transport-https
-
 ```
+
+For cleaning and navigating:
+```
+sudo apt install mc
+#nano ~/.config/mc/ini  
+#  replace default skin by darkfar
+sudo apt install bleachbit
+#  as root: clear apt, journald, system cache, locales, logs, temps, trash
+sudo apt install geany 
+```
+
 
 
 
@@ -128,6 +131,6 @@ From console (no GUI)
 - sudo bleachbit
 - sudo vmware-toolbox-cmd disk wipe /
 - sudo poweroff
-In vmware player,
+In vmware player, use 7z to compress the ./<VM> folder
 
 
