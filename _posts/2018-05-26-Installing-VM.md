@@ -34,10 +34,11 @@ Always-enable shares don't seem to work anymore. To make the shares visible, I f
 ```
 sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
 ```
-Alternatively, it might be possible to add this to */etc/fstab*':
+Alternatively, it might be possible to add this to */etc/fstab*'??:
 ```
 "vmhgfs-fuse /mnt/hgfs fuse defaults,allow_other 0 0"
 ```
+(kernel panic!)
 
 
 **In VMWare Player**:
@@ -79,12 +80,14 @@ For cleaning and navigating:
 ```
 sudo apt install mc
 #nano ~/.config/mc/ini  
-#  replace default skin by darkfar
 sudo apt install bleachbit
 #  as root: clear apt, journald, system cache, locales, logs, temps, trash
 sudo apt install geany 
 ```
+F10 in LxTerminal interferes with mc, so turn it off.
+I use skin=darkfar in ~/.config/mc/ini to improve colors in console.
 
+The system default PATH is set in /etc/environment. I remove the games stuff from it.
 
 
 
@@ -92,14 +95,6 @@ sudo apt install geany
 
 I copied some keys and configurations from another vm using mc (sftp facility).
 Same for git configuration and some aliases.
-
-
-### Some configuation changes
-
-The system default PATH is set in /etc/environment. I remove the games stuff from it.
-F10 in LxTerminal interferes with mc, so turn it off.
-I use skin=darkfar in ~/.config/mc/ini to improve colors in console.
-
 
 ### Some strange problems and some solutions
 
@@ -114,11 +109,11 @@ sudo apt install ttf-ubuntu-font-family
 for i in /usr/share/consolefonts/Uni*;\  
   do setfont "$i"; ls -l /proc/; echo -e "\nINFO: currently set font: $i"; sleep 2; clear; done
 #or 
-setfont /usr/share/consolefonts/Uni3-Terminus20x10.psf.gz
+  setfont /usr/share/consolefonts/Uni3-Terminus20x10.psf.gz
 
 #to set default font after reboot do like
 sudo dpkg-reconfigure console-setup
-#I chose a latin5 (Western Europe) and no changes to the boot font, which is good enough
+#I choose UTF8 latin1 Uni3-Terminus20x10
 ```
 
 :-1: Making a sftp connections from PcManFM does not work. There seems to be an un-met dependency to *gvfs*.  
