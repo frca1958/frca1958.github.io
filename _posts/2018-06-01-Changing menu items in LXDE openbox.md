@@ -1,3 +1,7 @@
+---
+title: "Create menus in LXDE"
+---
+
 ## Goal: Create Menus in LXDE
 
 ## Refs

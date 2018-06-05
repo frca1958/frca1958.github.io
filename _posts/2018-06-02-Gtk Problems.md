@@ -1,3 +1,6 @@
+---
+title: "Getting rid of Gtk Theme icon warnings"
+---
 ## Intro
 A recurring problem is this type of message:
 ```
